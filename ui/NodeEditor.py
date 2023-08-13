@@ -13,7 +13,6 @@ from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 from ui.EditorBG import EditorBG
 from ui.Node import Node
-from ui.NodeContainer import NodeContainer
 from ui.EditorView import EditorView
 
 class Ui_MainWindow(object):
@@ -35,7 +34,6 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.graphicsView)
         nodes = ['node_1', 'node_2', 'node_3']
         for node_index, node in enumerate(nodes):
-            # _node = NodeContainer(scene=self.bg,node_name=node, pos_x=node_index*70, pos_y=node_index*100, height=50, width=80)
             self.bg.addItem(Node(node_name=node, pos_x=node_index*70, pos_y=node_index*100, height=50, width=80))
 
         MainWindow.setCentralWidget(self.centralwidget)
